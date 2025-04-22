@@ -573,7 +573,7 @@ st.markdown("""
     <p><i class="fas fa-map-marker-alt"></i> Sammamish, WA 98075, United States</p>
     <div class='contact-icons'>
         <a href="mailto:konduru.lasya@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-        <a href="https://linkedin.com/in/lasya-konduru" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/lasya-priya-k/" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/lasyakonduru" target="_blank"><i class="fab fa-github"></i></a>
     </div>
     <div class="bottom-text">© 2025 Lasya Priya Konduru. All rights reserved.</div>
