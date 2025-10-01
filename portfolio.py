@@ -341,28 +341,31 @@ filtered_projects = [p for p in projects if selected == "🌐All" or selected in
 
 # Render Project Cards
 st.markdown("<div class='card-grid'>", unsafe_allow_html=True)
+
+cards_html = ""
 for proj in filtered_projects:
     github_link = f"<a class='btn' href='{proj.get('Link')}' target='_blank'>📁 GitHub Repo</a>" if proj.get("Link") else ""
     app_link = f"<a class='btn' href='{proj.get('AppLink')}' target='_blank'>🚀 Live App</a>" if proj.get("AppLink") else ""
 
-    # Inside rendering loop
     button_block = ""
     if proj.get("Link") or proj.get("AppLink"):
         button_block = "<div class='button-container'>"
         if proj.get("Link"):
-            button_block += f"<a class='btn' href='{proj['Link']}' target='_blank'>📁 GitHub Repo</a>"
+            button_block += github_link
         if proj.get("AppLink"):
-            button_block += f"<a class='btn' href='{proj['AppLink']}' target='_blank'>🚀 Live App</a>"
+            button_block += app_link
         button_block += "</div>"
 
-    st.markdown(f"""
+    cards_html += f"""
         <div class='card'>
             <h4>{proj['Title']}</h4>
             <p>{proj['Description']}</p>
             <div class='skills'><b>Skills:</b> {proj['Skills']}</div>
             {button_block}
         </div>
-    """, unsafe_allow_html=True)
+    """
+
+st.markdown(cards_html, unsafe_allow_html=True)
 st.markdown("</div>", unsafe_allow_html=True)
 
 # --- CONTACT / FOOTER SECTION ---
