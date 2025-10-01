@@ -141,11 +141,11 @@ html, body, [class*="css"] {
 /* ---------- PROJECT CARDS ---------- */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem; /* this will now work */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
     margin: 2rem auto;
-    max-width: 1200px;
-    width: 100%;
+    max-width: 1200px;  /* important */
+    width: 100%;        /* ensures full stretch */
 }
 .card {
     flex: 1 1 350px;
@@ -205,14 +205,18 @@ html, body, [class*="css"] {
     text-align: center;
 }
 
+/* Hover State (lighter, inviting color) */
 .stButton button:hover {
-    background: #e85a2c;
+    background: #ff8c42;   /* warm orange */
     transform: translateY(-2px);
+    color: #fff !important;
 }
 
+/* Active State (darker, bold color to show "clicked") */
 .stButton button.active {
-    background: #ff3c00; /* active color */
+    background: #c13b00;   /* deeper red-orange */
     color: #fff !important;
+    border: 2px solid #ffaf66;  /* subtle outline */
 }
 
 .filter-btn {
