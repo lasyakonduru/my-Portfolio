@@ -46,9 +46,9 @@ with col1:
         st_lottie(hero_lottie, height=400, key="hero")
 
 with col2:
-    st.markdown("<h3 style='color:#00c4ff;'>👋 Hello, I am</h3>", unsafe_allow_html=True)
+    st.markdown("<h3>👋 Hello, I am</h3>", unsafe_allow_html=True)
     st.markdown("<h1 style='font-size: 2.5rem; font-weight: bold;'>Lasya Priya Konduru</h1>", unsafe_allow_html=True)
-    st.markdown("<h3 style='color: #ffffff; margin-top: -10px;'>AI-Focused Data Analyst | Data Scientist | Problem Solver 🌟</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 class='welcome-subtitle'>AI-Focused Data Analyst | Data Scientist | Problem Solver 🌟</h3>", unsafe_allow_html=True)
     st.markdown("""
         <p style='font-size: 1.1rem; line-height: 1.6; color: #cccccc;'>
         I build AI-powered systems and data-driven solutions that turn numbers into business impact.
@@ -58,17 +58,11 @@ with col2:
     """, unsafe_allow_html=True)
 
     # Buttons
-    colA, colB, colC = st.columns([1,1,1])
-    with colA:
-        st.download_button(
-            "📄 Download Resume",
-            data=open("LASYA K RESUME.pdf", "rb"),
-            file_name="Lasya_Konduru_Resume.pdf"
-        )
-    with colB:
-        st.markdown("<a class='btn' href='https://github.com/lasyakonduru' target='_blank'>💻 GitHub</a>", unsafe_allow_html=True)
-    with colC:
-        st.markdown("<a class='btn' href='https://www.linkedin.com/in/lasya-priya-k/' target='_blank'>🔗 LinkedIn</a>", unsafe_allow_html=True)
+    st.markdown("<div class='button-row'>", unsafe_allow_html=True)
+st.download_button("📄 Download Resume", data=open("LASYA K RESUME.pdf", "rb"), file_name="Lasya_Konduru_Resume.pdf")
+st.markdown("<a class='btn' href='https://github.com/lasyakonduru' target='_blank'>💻 GitHub</a>", unsafe_allow_html=True)
+st.markdown("<a class='btn' href='https://www.linkedin.com/in/lasya-priya-k/' target='_blank'>🔗 LinkedIn</a>", unsafe_allow_html=True)
+st.markdown("</div>", unsafe_allow_html=True)
 
 # --- ABOUT SECTION ---
 st.markdown("<div id='about'></div>", unsafe_allow_html=True)
@@ -92,7 +86,7 @@ with about_col1:
     <div class="sticky-left">
     """, unsafe_allow_html=True)
 
-    st.image("Headshot.png", caption="Lasya Priya Konduru", use_column_width=True)
+    st.image("Headshot.png", caption="Lasya Priya Konduru", use_container_width=True)
 
     home_lottie = load_lottiefile("Animation 2.json")
     if home_lottie:
@@ -100,33 +94,45 @@ with about_col1:
 
     st.markdown("</div>", unsafe_allow_html=True)
 
-    # --- Skills Pie Chart ---
-    st.markdown("<div id='skills'></div>", unsafe_allow_html=True)
-    st.markdown("<h3 style='text-align:center; color:#00c4ff;'>💡 Top Skills</h3>", unsafe_allow_html=True)
-
-    skills = ["Python", "SQL", "R", "Power BI", "Tableau", "AWS", "Machine Learning", "AI / GenAI", "Data Engineering"]
-    ratings = [95, 90, 85, 90, 85, 80, 90, 85, 80]
-
-    fig = px.pie(
-        names=skills,
-        values=ratings,
-        color_discrete_sequence=px.colors.sequential.Teal_r
-    )
-    fig.update_traces(textinfo='label+percent', textfont_size=14, marker=dict(line=dict(color='white', width=2)))
-    fig.update_layout(height=450, showlegend=True, paper_bgcolor='white', font=dict(color='black', size=14))
-    st.plotly_chart(fig, use_container_width=True)
-
-    # --- Articles Section ---
+    # --- Certifications ---
     st.markdown("""
-    <div class="article-card">
-        <a href="https://medium.com/@konduru.lasya/ai-wont-replace-you-but-it-might-if-you-don-t-train-it-to-think-like-you-6ccb128423dc" target="_blank">
-    🤖 AI Won’t Replace You — But It Might If You Don’t Train It</a>
-    </div>
-    <div class="article-card">
-        <a href="https://medium.com/@lasyakonduru/plot-twist-people-still-pay-cash-for-taxis" target="_blank">
-    🚕 Plot Twist: People Still Pay Cash for Taxis</a>
+    <div class="cert-section">
+        <h2>📜 Certifications</h2>
+        <div class="cert-list">
+            <a class="cert-badge" href="https://cp.certmetrics.com/amazon/en/public/verify/credential" target="_blank">AWS Certified Data Analytics</a>
+            <a class="cert-badge" href="https://skillshop.credential.net/64823a47-1671-4145-8310-ce9f57617521" target="_blank">Google Analytics</a>
+            <a class="cert-badge" href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_tMpKmpA9LmihKJ8Tc_1738805509796_completion_certificate.pdf" target="_blank">Tata Group (Forage)</a>
+            <a class="cert-badge" href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/BCG%20/Tcz8gTtprzAS4xSoK_BCG_tMpKmpA9LmihKJ8Tc_1726273601941_completion_certificate.pdf" target="_blank">BCG - Data Science (Forage)</a>
+            <a class="cert-badge" href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/British%20Airways/NjynCWzGSaWXQCxSX_British%20Airways_tMpKmpA9LmihKJ8Tc_1727064432080_completion_certificate.pdf" target="_blank">British Airways (Forage)</a>
+            <a class="cert-badge" href="https://www.credly.com/badges/ec7425f2-d275-4614-88c7-9eee8b02a84f/linked_in_profile" target="_blank">AWS Educate: Databases</a>
+        </div>
     </div>
     """, unsafe_allow_html=True)
+
+    # --- Articles Section ---
+    st.markdown("<h3 class='section-title'>📝 Articles</h3>", unsafe_allow_html=True)
+
+    articles = [
+        {
+            "title": "🤖 AI Won’t Replace You — But It Might If You Don’t 🧠 Train It to Think Like You",
+            "desc": "How AI complements human skills and why training it properly matters.",
+            "link": "https://medium.com/@konduru.lasya/ai-wont-replace-you-but-it-might-if-you-don-t-train-it-to-think-like-you-6ccb128423dc"
+        },
+        {
+            "title": "🚕 Plot Twist: People Still Pay Cash for Taxis",
+            "desc": "A fun data story exploring taxi payment trends in NYC.",
+            "link": "https://medium.com/@konduru.lasya/plot-twist-people-still-pay-cash-for-taxis-in-nyc-176277e30656"
+        }
+    ]
+    
+    for art in articles:
+        st.markdown(f"""
+            <div class='article-card'>
+                <h4>{art['title']}</h4>
+                <p>{art['desc']}</p>
+                <a class='btn' href='{art['link']}' target='_blank'>Read More</a>
+            </div>
+        """, unsafe_allow_html=True)
 
 with about_col2:
     st.write("""
@@ -146,39 +152,40 @@ Let’s solve real problems, uncover meaningful stories, and maybe laugh a littl
     # --- Experience ---
     st.markdown("<h3 style='color:#00c4ff;'>💼 Experience</h3>", unsafe_allow_html=True)
     st.markdown("""
-    <div class='exp-card'><strong>AI/ML Researcher & Algorithm Developer, Ascent Up</strong><br>Jul 2025 – Sept 2025 | 3 months</div>
-    <div class='exp-card'><strong>Google Analytics Specialist, Resilience Inc.</strong><br>Jun 2025 – Present | 4 months</div>
-    <div class='exp-card'><strong>Google Analytics Specialist, Resilience Inc.</strong><br>Aug 2024 – Jun 2025 | 10 months</div>
-    <div class='exp-card'><strong>Data Analyst Apprentice, Coding temple</strong><br>Mar 2025 – Aug 2025 | 6 Months</div>
+    <div class='exp-card'><strong>AI/ML Researcher & Algorithm Developer | Ascent Up</strong><br>Jul 2025 – Sept 2025 | 3 months</div>
+    <div class='exp-card'><strong>Google Analytics Specialist | Resilience Inc.</strong><br>Jun 2025 – Present | 4 months</div>
+    <div class='exp-card'><strong>Google Analytics Specialist | Resilience Inc.</strong><br>Aug 2024 – Jun 2025 | 10 months</div>
+    <div class='exp-card'><strong>Data Analyst Apprentice | Coding temple</strong><br>Mar 2025 – Aug 2025 | 6 Months</div>
     """, unsafe_allow_html=True)
     
     # Education Section
     st.markdown("<h3 style='color:#00c4ff;'>🎓 Education</h3>", unsafe_allow_html=True)
     st.markdown("""
     <div class='edu-card'>
-    <h4>Saint Louis University</h4> <p>| St Louis, MO USA</p>
+    <h5>Saint Louis University| St Louis, MO USA</h5>
     <h4>MS in Analytics (2023–2024) | GPA: 3.8</h4>
     </div>
     <div class='edu-card'>
-        <h4>Sreyas Institute of Engineering & Technology (JNTUH)</h4> <p>| Hyderabad, India</p>
+        <h5>Sreyas Institute of Engineering & Technology (JNTUH) | Hyderabad, India</h5>
         <h4>B.Tech in Computer Science (2018–2022) | GPA: 3.2</h4>
     </div>
     """, unsafe_allow_html=True)
     
-    # --- Certifications ---
-    st.markdown("""
-    <div class="cert-section">
-        <h2>📜 Certifications</h2>
-        <div class="cert-list">
-            <a class="cert-badge" href="https://cp.certmetrics.com/amazon/en/public/verify/credential" target="_blank">AWS Certified Data Analytics</a>
-            <a class="cert-badge" href="https://skillshop.credential.net/64823a47-1671-4145-8310-ce9f57617521" target="_blank">Google Analytics</a>
-            <a class="cert-badge" href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_tMpKmpA9LmihKJ8Tc_1738805509796_completion_certificate.pdf" target="_blank">Tata Group (Forage)</a>
-            <a class="cert-badge" href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/BCG%20/Tcz8gTtprzAS4xSoK_BCG_tMpKmpA9LmihKJ8Tc_1726273601941_completion_certificate.pdf" target="_blank">BCG - Data Science (Forage)</a>
-            <a class="cert-badge" href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/British%20Airways/NjynCWzGSaWXQCxSX_British%20Airways_tMpKmpA9LmihKJ8Tc_1727064432080_completion_certificate.pdf" target="_blank">British Airways (Forage)</a>
-            <a class="cert-badge" href="https://www.credly.com/badges/ec7425f2-d275-4614-88c7-9eee8b02a84f/linked_in_profile" target="_blank">AWS Educate: Databases</a>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    # --- Skills Pie Chart ---
+    st.markdown("<div id='skills'></div>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align:center; color:#00c4ff;'>💡 Top Skills</h3>", unsafe_allow_html=True)
+
+    skills = ["Python", "SQL", "R", "Power BI", "Tableau", "AWS", "Machine Learning", "AI / GenAI", "Data Engineering"]
+    ratings = [95, 90, 85, 90, 85, 80, 90, 85, 80]
+
+    fig = px.pie(
+        names=skills,
+        values=ratings,
+        color_discrete_sequence=px.colors.sequential.Teal_r
+    )
+    fig.update_traces(textinfo='label+percent', textfont_size=14, marker=dict(line=dict(color='white', width=2)))
+    fig.update_layout(height=450, showlegend=True, paper_bgcolor='white', font=dict(color='black', size=14))
+    st.plotly_chart(fig, use_container_width=True)
 
 # --- PROJECTS SECTION ---
 st.markdown("<div id='projects'></div>", unsafe_allow_html=True)
