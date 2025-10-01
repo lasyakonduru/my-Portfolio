@@ -140,21 +140,21 @@ html, body, [class*="css"] {
 
 /* ---------- PROJECT CARDS ---------- */
 .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 2rem !important;
-    gap: 3rem !important;   /* space between cards */
-    margin: 2rem auto;
-    max-width: 1200px;      /* keeps cards aligned */
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem !important;
+    justify-content: center;
+    margin-top: 2rem;
 }
 .card {
+    flex: 1 1 350px;
+    max-width: 380px;
     background: #1c1f26;
+    margin: 10px;
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(255, 140, 66, 0.25);
     transition: transform 0.3s;
-    min-height: 280px;
 }
 .card:hover {
     transform: scale(1.02);
