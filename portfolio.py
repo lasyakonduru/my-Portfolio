@@ -18,6 +18,9 @@ import plotly.express as px
 
 # Page configuration
 st.set_page_config(page_title="Lasya Priya Konduru Portfolio", layout="wide", page_icon="📊")
+st.markdown("""
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+""", unsafe_allow_html=True)
 
 import json
 
@@ -89,7 +92,7 @@ with about_col1:
     <div class="sticky-left">
     """, unsafe_allow_html=True)
 
-    st.image("Headshot.png", caption="Lasya Priya Konduru", width=250)
+    st.image("Headshot.png", caption="Lasya Priya Konduru", use_column_width=True)
 
     home_lottie = load_lottiefile("Animation 2.json")
     if home_lottie:
@@ -114,27 +117,29 @@ with about_col1:
     st.plotly_chart(fig, use_container_width=True)
 
     # --- Articles Section ---
-    st.markdown("<h3 style='color:#00c4ff; text-align:center;'>📝 Articles</h3>", unsafe_allow_html=True)
     st.markdown("""
-    <div style='text-align:left;'>
-        <p><a href="https://medium.com/@konduru.lasya/ai-wont-replace-you-but-it-might-if-you-don-t-train-it-to-think-like-you-6ccb128423dc" target="_blank">🤖 AI Won’t Replace You — But It Might If You Don’t 🧠 Train It to Think Like You</a></p>
-        <p><a href="https://medium.com/@lasyakonduru/plot-twist-people-still-pay-cash-for-taxis" target="_blank">🚕 Plot Twist: People Still Pay Cash for Taxis</a></p>
+    <div class="article-card">
+        <a href="https://medium.com/@konduru.lasya/ai-wont-replace-you-but-it-might-if-you-don-t-train-it-to-think-like-you-6ccb128423dc" target="_blank">
+    🤖 AI Won’t Replace You — But It Might If You Don’t Train It</a>
+    </div>
+    <div class="article-card">
+        <a href="https://medium.com/@lasyakonduru/plot-twist-people-still-pay-cash-for-taxis" target="_blank">
+    🚕 Plot Twist: People Still Pay Cash for Taxis</a>
     </div>
     """, unsafe_allow_html=True)
 
 with about_col2:
     st.write("""
-### Hi, I'm Lasya Priya Konduru 🌟  
+### Well,   
 
-I am a results-driven **Data Analyst and aspiring Data Scientist** with expertise in transforming complex datasets into actionable insights. My work spans **analytics, machine learning, and visualization**, helping businesses make informed decisions with speed and clarity.  
-
-I bring experience in **SQL, Python, R, Power BI, Tableau, AWS, and AI/ML techniques**, with a strong academic foundation — **M.S. in Analytics (GPA 3.8) from Saint Louis University** and **B.Tech in Computer Science from JNTUH**.  
+I am a results-driven **Data Analyst and aspiring Data Scientist** with expertise in transforming complex datasets into actionable insights. My work spans **analytics, machine learning, and visualization**, helping businesses make informed decisions with speed and clarity.
 
 Beyond technical skills, I am passionate about building solutions that balance **accuracy, scalability, and usability**. I thrive in collaborative environments where I can combine **storytelling with data**, enabling stakeholders to connect insights with strategy.  
 
 When I’m not solving data problems, I enjoy exploring **emerging AI applications, writing articles**, and contributing to projects that push the boundaries of innovation.
 
 If you’re looking for someone who’s data-driven and people-powered — that’s me. 💡
+
 Let’s solve real problems, uncover meaningful stories, and maybe laugh a little along the way. 😄
     """)
 
