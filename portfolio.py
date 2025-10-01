@@ -46,18 +46,18 @@ with col1:
         st_lottie(hero_lottie, height=400, key="hero")
 
 with col2:
-    st.markdown("<h3>👋 Hello, I am</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color:#ff6b35;'>👋 Hello, I am</h3>", unsafe_allow_html=True)
     st.markdown("<h1 style='font-size: 2.5rem; font-weight: bold;'>Lasya Priya Konduru</h1>", unsafe_allow_html=True)
-    st.markdown("<h3 class='welcome-subtitle'>AI-Focused Data Analyst | Data Scientist | Problem Solver 🌟</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color: #333; margin-top: -10px;'>AI-Focused Data Analyst | Data Scientist | Problem Solver 🌟</h3>", unsafe_allow_html=True)
     st.markdown("""
-        <p style='font-size: 1.1rem; line-height: 1.6; color = #ff8c42'>
+        <p class="welcome-text">
         I build AI-powered systems and data-driven solutions that turn numbers into business impact.
         With expertise in <b>Python, SQL, Power BI, AWS, and Machine Learning</b>, I deliver insights
         that drive smarter decisions and measurable results.
         </p>
     """, unsafe_allow_html=True)
 
-    # Buttons
+    # Button row
     st.markdown("<div class='button-row'>", unsafe_allow_html=True)
     st.download_button("📄 Download Resume", data=open("LASYA K RESUME.pdf", "rb"), file_name="Lasya_Konduru_Resume.pdf")
     st.markdown("<a class='btn' href='https://github.com/lasyakonduru' target='_blank'>💻 GitHub</a>", unsafe_allow_html=True)
@@ -111,28 +111,20 @@ with about_col1:
 
     # --- Articles Section ---
     st.markdown("<h3 class='section-title'>📝 Articles</h3>", unsafe_allow_html=True)
-
-    articles = [
-        {
-            "title": "🤖 AI Won’t Replace You — But It Might If You Don’t 🧠 Train It to Think Like You",
-            "desc": "How AI complements human skills and why training it properly matters.",
-            "link": "https://medium.com/@konduru.lasya/ai-wont-replace-you-but-it-might-if-you-don-t-train-it-to-think-like-you-6ccb128423dc"
-        },
-        {
-            "title": "🚕 Plot Twist: People Still Pay Cash for Taxis",
-            "desc": "A fun data story exploring taxi payment trends in NYC.",
-            "link": "https://medium.com/@konduru.lasya/plot-twist-people-still-pay-cash-for-taxis-in-nyc-176277e30656"
-        }
-    ]
+    st.markdown("""
+    <div class="article-card">
+        <h4>🤖 AI Won’t Replace You — But It Might If You Don’t 🧠 Train It to Think Like You</h4>
+        <p>How AI complements human skills and why training it properly matters.</p>
+        <a class="btn" href="https://medium.com/@konduru.lasya/ai-wont-replace-you-but-it-might-if-you-don-t-train-it-to-think-like-you-6ccb128423dc" target="_blank">..Read More</a>
+    </div>
     
-    for art in articles:
-        st.markdown(f"""
-            <div class='article-card'>
-                <h5>{art['title']}</h4>
-                <p>{art['desc']}</p>
-                <a class='btn' href='{art['link']}' target='_blank'>Read More..</a>
-            </div>
-        """, unsafe_allow_html=True)
+    <div class="article-card">
+        <h4>🚕 Plot Twist: People Still Pay Cash for Taxis</h4>
+        <p>A fun data story exploring taxi payment trends in NYC, that dives into the surprising resilience of cash transactions!</p>
+        <a class="btn" href="https://medium.com/@lasyakonduru/plot-twist-people-still-pay-cash-for-taxis" target="_blank">..Read More</a>
+    </div>
+    """, unsafe_allow_html=True)
+
 
 with about_col2:
     st.write("""
@@ -174,18 +166,21 @@ Let’s solve real problems, uncover meaningful stories, and maybe laugh a littl
     st.markdown("<h3>🎓 Education</h3>", unsafe_allow_html=True)
     st.markdown("""
     <div class='edu-card'>
-        <h7>Saint Louis University| St Louis, MO USA</h5>
-        <h6>MS in Analytics (2023–2024) | GPA: 3.8</h4>
+      <h4>Saint Louis University</h4>
+      <p>St Louis, MO USA</p>
+      <h4>MS in Analytics (2023–2024) | GPA: 3.8</h4>
     </div>
+    
     <div class='edu-card'>
-        <h7>Sreyas Institute of Engineering & Technology (JNTUH) | Hyderabad, India</h5>
-        <h6>B.Tech in Computer Science (2018–2022) | GPA: 3.2</h4>
+      <h4>Sreyas Institute of Engineering & Technology (JNTUH)</h4>
+      <p>Hyderabad, India</p>
+      <h4>B.Tech in Computer Science (2018–2022) | GPA: 3.2</h4>
     </div>
     """, unsafe_allow_html=True)
     
     # --- Skills Pie Chart ---
     st.markdown("<div id='skills'></div>", unsafe_allow_html=True)
-    st.markdown("<h3 style='text-align:center; color:#00c4ff;'>💡 Top Skills</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align:center'>💡 Top Skills</h3>", unsafe_allow_html=True)
 
     skills = ["Python", "SQL", "R", "Power BI", "Tableau", "AWS", "Machine Learning", "AI / GenAI", "Data Engineering"]
     ratings = [95, 90, 85, 90, 85, 80, 90, 85, 80]
