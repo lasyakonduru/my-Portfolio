@@ -46,9 +46,9 @@ with col1:
         st_lottie(hero_lottie, height=400, key="hero")
 
 with col2:
-    st.markdown("<h3 style='color:#ff6b35;'>👋 Hello, I am</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color:#ff6b35; text-align: left;'>👋 Hello, I am</h3>", unsafe_allow_html=True)
     st.markdown("<h1 style='font-size: 2.5rem; font-weight: bold;'>Lasya Priya Konduru</h1>", unsafe_allow_html=True)
-    st.markdown("<h3 style='color: #333; margin-top: -10px;'>AI-Focused Data Analyst | Data Scientist | Problem Solver 🌟</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color: #333; margin-top: -10px; text-align: left;'>AI-Focused Data Analyst | Data Scientist | Problem Solver 🌟</h3>", unsafe_allow_html=True)
     st.markdown("""
         <p class="welcome-text">
         I build AI-powered systems and data-driven solutions that turn numbers into business impact.
@@ -58,16 +58,18 @@ with col2:
     """, unsafe_allow_html=True)
 
     # Button row
-    st.markdown("<div class='button-row'>", unsafe_allow_html=True)
-    st.download_button("📄 Download Resume", data=open("LASYA K RESUME.pdf", "rb"), file_name="Lasya_Konduru_Resume.pdf")
-    st.markdown("<a class='btn' href='https://github.com/lasyakonduru' target='_blank'>💻 GitHub</a>", unsafe_allow_html=True)
-    st.markdown("<a class='btn' href='https://www.linkedin.com/in/lasya-priya-k/' target='_blank'>🔗 LinkedIn</a>", unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown("""
+    <div class="button-row">
+        <a class='btn' href="LASYA K RESUME.pdf" download="Lasya_Konduru_Resume.pdf">📄 Download Resume</a>
+        <a class='btn' href="https://github.com/lasyakonduru" target="_blank">💻 GitHub</a>
+        <a class='btn' href="https://www.linkedin.com/in/lasya-priya-k/" target="_blank">🔗 LinkedIn</a>
+    </div>
+    """, unsafe_allow_html=True)
 
 # --- ABOUT SECTION ---
 st.markdown("<div id='about'></div>", unsafe_allow_html=True)
 st.markdown("---")
-st.markdown("<h2 id='about'>📌 About Me</h2>", unsafe_allow_html=True)
+st.markdown("<h2 id='about' style = 'text-align: left;'>📌 About Me</h2>", unsafe_allow_html=True)
 
 about_col1, about_col2 = st.columns([1, 2])
 
@@ -165,16 +167,14 @@ Let’s solve real problems, uncover meaningful stories, and maybe laugh a littl
     # Education Section
     st.markdown("<h3>🎓 Education</h3>", unsafe_allow_html=True)
     st.markdown("""
-    <div class='edu-card'>
-      <h4>Saint Louis University</h4>
-      <p>St Louis, MO USA</p>
-      <h4>MS in Analytics (2023–2024) | GPA: 3.8</h4>
+    <div class="edu-card">
+      <h6>Saint Louis University <span>| St Louis, MO USA</span></h6>
+      <h6>MS in Analytics (2023–2024) | GPA: 3.8</h6>
     </div>
     
     <div class='edu-card'>
-      <h4>Sreyas Institute of Engineering & Technology (JNTUH)</h4>
-      <p>Hyderabad, India</p>
-      <h4>B.Tech in Computer Science (2018–2022) | GPA: 3.2</h4>
+      <h6>Sreyas Institute of Engineering & Technology (JNTUH) <span>| Hyderabad, India</span></h6>
+      <h6>B.Tech in Computer Science (2018–2022) | GPA: 3.2</h6>
     </div>
     """, unsafe_allow_html=True)
     
