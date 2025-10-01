@@ -140,11 +140,12 @@ html, body, [class*="css"] {
 
 /* ---------- PROJECT CARDS ---------- */
 .card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem !important;
-    justify-content: center;
-    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem; /* this will now work */
+    margin: 2rem auto;
+    max-width: 1200px;
+    width: 100%;
 }
 .card {
     flex: 1 1 350px;
@@ -212,6 +213,23 @@ html, body, [class*="css"] {
 .stButton button.active {
     background: #ff3c00; /* active color */
     color: #fff !important;
+}
+
+.filter-btn {
+    background: linear-gradient(135deg, #ff8c42, #ff6b6b);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.filter-btn:hover,
+.filter-btn.active {
+    background: linear-gradient(135deg, #ff6b6b, #ff8c42);
+    transform: scale(1.05);
 }
 
 /* Equal filter buttons */
