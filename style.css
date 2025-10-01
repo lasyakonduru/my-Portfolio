@@ -142,8 +142,10 @@ html, body, [class*="css"] {
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 3rem !important;   /* space between cards */
+    margin: 2rem auto;
+    max-width: 1200px;      /* keeps cards aligned */
+    width: 100%;
 }
 .card {
     background: #1c1f26;
@@ -180,38 +182,42 @@ html, body, [class*="css"] {
 .filter-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
     justify-content: center;
+    gap: 1rem;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
-.filter-btn, .filter-row button {
-    background: #1c1f26;
-    border: 2px solid #ff8c42;
-    border-radius: 25px;
-    padding: 0.5rem 1rem;
-    color: #fff;
+
+.stButton button {
+    background: linear-gradient(135deg, #ff7e5f, #ff6b35);
+    border: none;
+    border-radius: 30px;
+    padding: 0.7rem 1.5rem;
+    color: white !important;
     font-weight: 600;
+    font-size: 15px;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255,107,53,0.25);
+    transition: all 0.3s ease;
+    min-width: 130px;
+    text-align: center;
 }
-.filter-row button:hover {
-    background: #ff8c42;
-    color: #000;
+
+.stButton button:hover {
+    background: #e85a2c;
+    transform: translateY(-2px);
 }
-.filter-row button:focus, .filter-row button:active {
-    background: #ff7e5f !important;
+
+.stButton button.active {
+    background: #ff3c00; /* active color */
     color: #fff !important;
 }
+
 /* Equal filter buttons */
 .filter-row button {
     min-width: 120px;
     text-align: center;
     padding: 0.6rem 1rem;
-}
-
-/* Add gap between project cards */
-.card-grid {
-    gap: 5rem !important;
-    margin-bottom: 2rem;
 }
 
 /* Skills contrast */
