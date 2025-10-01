@@ -326,9 +326,6 @@ projects = [
 # --- Filter Buttons (Horizontal only) ---
 categories = ["🌐All", "🤖 AI", "🧠ML", "📊BI & Analytics", "💻Web Dev", "🛠SQL & Data Eng", "📈Data Viz", "🗣NLP", "🧬BIO", "☁️Cloud"]
 st.markdown("<div class='filter-row'>", unsafe_allow_html=True)
-for option in categories:
-    active_class = "active" if option == selected_filter else ""
-    st.markdown(f"<button class='filter-btn {active_class}'>{option}</button>", unsafe_allow_html=True)
 filter_cols = st.columns(len(categories))
 for i, cat in enumerate(categories):
     if filter_cols[i].button(cat, key=cat):
