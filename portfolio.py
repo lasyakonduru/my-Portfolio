@@ -346,24 +346,29 @@ for proj in filtered_projects:
     app_link = f"<a class='btn' href='{proj.get('AppLink')}' target='_blank'>🚀 Live App</a>" if proj.get("AppLink") else ""
 
     # Inside rendering loop
-    button_block = ""
-    if proj.get("Link") or proj.get("AppLink"):
-        button_block = "<div class='button-container'>"
-        if proj.get("Link"):
-            button_block += f"<a class='btn' href='{proj['Link']}' target='_blank'>📁 GitHub Repo</a>"
-        if proj.get("AppLink"):
-            button_block += f"<a class='btn' href='{proj['AppLink']}' target='_blank'>🚀 Live App</a>"
-        button_block += "</div>"
+    card_html = "<div class='card-grid'>"
+    for proj in filtered_projects:
+        button_block = ""
+        if proj.get("Link") or proj.get("AppLink"):
+            button_block = "<div class='button-container'>"
+            if proj.get("Link"):
+                button_block += f"<a class='btn' href='{proj['Link']}' target='_blank'>📁 GitHub Repo</a>"
+            if proj.get("AppLink"):
+                button_block += f"<a class='btn' href='{proj['AppLink']}' target='_blank'>🚀 Live App</a>"
+            button_block += "</div>"
+    
+        card_html += f"""
+            <div class='card'>
+                <h4>{proj['Title']}</h4>
+                <p>{proj['Description']}</p>
+                <div class='skills'><b>Skills:</b> {proj['Skills']}</div>
+                {button_block}
+            </div>
+        """
+    card_html += "</div>"
 
-    st.markdown(f"""
-        <div class='card'>
-            <h4>{proj['Title']}</h4>
-            <p>{proj['Description']}</p>
-            <div class='skills'><b>Skills:</b> {proj['Skills']}</div>
-            {button_block}
-        </div>
-    """, unsafe_allow_html=True)
-st.markdown("</div>", unsafe_allow_html=True)
+st.markdown(card_html, unsafe_allow_html=True)
+
 
 # --- CONTACT / FOOTER SECTION ---
 st.markdown("<div id='contact'></div>", unsafe_allow_html=True)
