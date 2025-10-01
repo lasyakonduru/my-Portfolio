@@ -341,30 +341,28 @@ filtered_projects = [p for p in projects if selected == "🌐All" or selected in
 
 # Render Project Cards
 cards_html = ""
-for proj in filtered_projects:
-    github_link = f"<a class='btn' href='{proj.get('Link')}' target='_blank'>📁 GitHub Repo</a>" if proj.get("Link") else ""
-    app_link = f"<a class='btn' href='{proj.get('AppLink')}' target='_blank'>🚀 Live App</a>" if proj.get("AppLink") else ""
-
+for p in filtered_projects:
+    github_link = f"<a class='btn' href='{p.get('Link')}' target='_blank'>📁 GitHub Repo</a>" if p.get("Link") else ""
+    app_link   = f"<a class='btn' href='{p.get('AppLink')}' target='_blank'>🚀 Live App</a>" if p.get("AppLink") else ""
+    
     button_block = ""
-    if proj.get("Link") or proj.get("AppLink"):
-        button_block = "<div class='button-container'>"
-        if proj.get("Link"):
-            button_block += github_link
-        if proj.get("AppLink"):
-            button_block += app_link
-        button_block += "</div>"
-
+    if github_link or app_link:
+        button_block = f"<div class='button-container'>{github_link}{app_link}</div>"
+    
+    # Append this project card to the HTML string
     cards_html += f"""
         <div class='card'>
-            <h4>{proj['Title']}</h4>
-            <p>{proj['Description']}</p>
-            <div class='skills'><b>Skills:</b> {proj['Skills']}</div>
+            <h4>{p['Title']}</h4>
+            <p>{p['Description']}</p>
+            <div class='skills'><b>Skills:</b> {p['Skills']}</div>
             {button_block}
         </div>
     """
 
-# Render container + cards together (one call)
+# Wrap the cards inside the grid container
 grid_html = f"<div class='card-grid'>{cards_html}</div>"
+
+# Render everything in one go
 st.markdown(grid_html, unsafe_allow_html=True)
 
 # --- CONTACT / FOOTER SECTION ---
