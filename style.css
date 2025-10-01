@@ -19,7 +19,7 @@ h1, h2, h3, h4 {
     font-weight: 600;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    text-align: center;
+    text-align: left;
 }
 
 /* Align buttons in center */
