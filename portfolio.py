@@ -51,26 +51,69 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Welcome Section
-col1, col2 = st.columns([1,2])
+# --- WELCOME SECTION ---
+col1, col2 = st.columns([1, 2])
+
 with col1:
     if hero_lottie:
         st_lottie(hero_lottie, height=400, key="hero")
-with col2:
-    st.markdown("### 👋 Hello, I am")
-    st.markdown("# Lasya Priya Konduru")
-    st.markdown("### Data Analyst | Data Scientist | Problem Solver 🌟")
-    st.markdown("Welcome to explore ME!")
-    st.download_button("📄 Download My Resume", data=open("Lasya___Resume.pdf", "rb"), file_name="Lasya_Konduru_Resume.pdf")
 
-# About Section
+with col2:
+    st.markdown("<h3 style='color:#00c4ff;'>👋 Hello, I am</h3>", unsafe_allow_html=True)
+    st.markdown("<h1 style='font-size: 2.5rem; font-weight: bold;'>Lasya Priya Konduru</h1>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color: #ffffff; margin-top: -10px;'>AI-Focused Data Analyst | Data Scientist | Problem Solver 🌟</h3>", unsafe_allow_html=True)
+    st.markdown("""
+        <p style='font-size: 1.1rem; line-height: 1.6; color: #cccccc;'>
+        I build AI-powered systems and data-driven solutions that turn numbers into business impact.
+        With expertise in <b>Python, SQL, Power BI, AWS, and Machine Learning</b>, I deliver insights
+        that drive smarter decisions and measurable results.
+        </p>
+    """, unsafe_allow_html=True)
+
+    # Buttons
+    colA, colB, colC = st.columns([1,1,1])
+    with colA:
+        st.download_button(
+            "📄 Download Resume",
+            data=open("LASYA K RESUME.pdf", "rb"),
+            file_name="Lasya_Konduru_Resume.pdf"
+        )
+    with colB:
+        st.markdown("<a class='btn' href='https://github.com/lasyakonduru' target='_blank'>💻 GitHub</a>", unsafe_allow_html=True)
+    with colC:
+        st.markdown("<a class='btn' href='https://www.linkedin.com/in/lasya-priya-k/' target='_blank'>🔗 LinkedIn</a>", unsafe_allow_html=True)
+
+# Styling for buttons
+st.markdown("""
+<style>
+.btn {
+    display: inline-block;
+    background-color: #00c4ff;
+    color: black !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none !important;
+    box-shadow: 0 4px 12px rgba(0,196,255,0.2);
+    transition: all 0.3s ease;
+}
+.btn:hover {
+    background-color: #009dcf;
+    color: white !important;
+    box-shadow: 0 6px 16px rgba(0,196,255,0.3);
+}
+</style>
+""", unsafe_allow_html=True)
+
+# --- ABOUT SECTION ---
 st.markdown("<div id='about'></div>", unsafe_allow_html=True)
 st.markdown("---")
 st.markdown("<h2 id='about'>📌 About Me</h2>", unsafe_allow_html=True)
 
 about_col1, about_col2 = st.columns([1, 2])
 
-# --- LEFT COLUMN: Sticky Profile & Animation ---
+# --- LEFT COLUMN: Profile + Animation + Skills + Articles ---
 with about_col1:
     st.markdown("""
     <style>
@@ -87,129 +130,76 @@ with about_col1:
 
     st.image("Lass - Copy.png", caption="Lasya Priya Konduru", width=250)
 
-    # Load Lottie animation
     home_lottie = load_lottiefile("Animation 2.json")
     if home_lottie:
         st_lottie(home_lottie, height=250, key="home-anim")
 
     st.markdown("</div>", unsafe_allow_html=True)
 
-with about_col2:
-    st.write("""
-### Hi, I'm Lasya 🌸
-A curious mind with a storyteller’s soul, I believe data isn’t just numbers — it’s emotion, insight, and impact waiting to be unlocked. 📊
-Fueled by coffee ☕, inspired by good music 🎶, and deeply moved by great cinema 🎬, I find joy in both exploring patterns and creating them — whether that’s through code or a killer homemade dish (yes, I’m a proud food lover and maker 🍝✨).
-
-Behind every dashboard, I bring a blend of empathy, communication, and conviction — turning complexity into clarity and ideas into action. I’m someone who leads with dedication, values, and vision, and thrives when managing teams or sparking collaboration that brings results.
-
-If you’re looking for someone who’s data-driven and people-powered — that’s me. 💡
-Let’s solve real problems, uncover meaningful stories, and maybe laugh a little along the way. 😄
-    """)
-
-    # Education Section
-    st.markdown("<div id='education'></div>", unsafe_allow_html=True)
-    st.markdown("""
-    <style>
-    .edu-section {
-        text-align: center;
-        margin-top: 3rem;
-    }
-    .edu-title {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #00c4ff;
-        margin-bottom: 2rem;
-    }
-    .edu-cards {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
-    }
-    .edu-card {
-        background: #3a5659;
-        padding: 1.5rem;
-        border-radius: 16px;
-        width: 320px;
-        box-shadow: 0 0 12px #00c4ff30;
-        text-align: left;
-    }
-    .edu-card h4, h5{
-        margin: 0 0 0.5rem 0;
-        color: white;
-    }
-    .edu-card p {
-        margin: 0;
-        font-size: 14px;
-        color: #ccc;
-    }
-    </style>
-
-    <div class='edu-section'>
-        <div class='edu-title'>🎓 Education</div>
-        <div class='edu-cards'>
-            <div class='edu-card'>
-                <h4>Saint Louis University</h4>
-                <h5>St Louis | Missouri</h5>
-                <p>Master of Science in Analytics (2023–2024)</p>
-                <p>GPA: 3.8</p>
-            </div>
-            <div class='edu-card'>
-                <h4>Sreyas Institute of Engineering & Technology (Aff. JNTUH)</h4>
-                <h5>Hyderabad | India</h5>
-                <p>B.Tech in Computer Science (2018–2022)</p>
-                <p>GPA: 3.2</p>
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-
-    # Skills Pie Chart
+    # --- Skills Pie Chart ---
     st.markdown("<div id='skills'></div>", unsafe_allow_html=True)
-    st.markdown(
-    "<h2 style='text-align: center; color: #00c4ff; margin-top: 2rem;'>💡 Top Skills</h2>",
-    unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align:center; color:#00c4ff;'>💡 Top Skills</h3>", unsafe_allow_html=True)
 
-    st.markdown("""
-    <style>
-    .skills-section {
-        margin-top: 4rem;
-        text-align: center;
-    }
-    .skills-title {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #00c4ff;
-        margin-bottom: 1rem;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-    # Pie chart
-    skills = ["Python", "SQL", "R", "Power BI", "Tableau", "AWS", "Machine Learning"]
-    ratings = [95, 90, 85, 90, 85, 75, 90]
+    skills = ["Python", "SQL", "R", "Power BI", "Tableau", "AWS", "Machine Learning", "AI / GenAI", "Data Engineering"]
+    ratings = [95, 90, 85, 90, 85, 80, 90, 85, 80]
 
     fig = px.pie(
         names=skills,
         values=ratings,
         color_discrete_sequence=px.colors.sequential.Teal_r
     )
-    fig.update_traces(
-        textinfo='label+percent',
-        textfont_size=14,
-        marker=dict(line=dict(color='white', width=2))
-    )
-    fig.update_layout(
-        height=450,
-        showlegend=True,
-        paper_bgcolor='white',
-        plot_bgcolor='white',
-        font=dict(color='black', size=14)
-    )
+    fig.update_traces(textinfo='label+percent', textfont_size=14, marker=dict(line=dict(color='white', width=2)))
+    fig.update_layout(height=450, showlegend=True, paper_bgcolor='white', font=dict(color='black', size=14))
     st.plotly_chart(fig, use_container_width=True)
 
-    # --- Certifications & Experience Timeline ---
+    # --- Articles Section ---
+    st.markdown("<h3 style='color:#00c4ff; text-align:center;'>📝 Articles</h3>", unsafe_allow_html=True)
+    st.markdown("""
+    <div style='text-align:left;'>
+        <p><a href="https://medium.com/@konduru.lasya/ai-wont-replace-you-but-it-might-if-you-don-t-train-it-to-think-like-you-6ccb128423dc" target="_blank">🤖 AI Won’t Replace You — But It Might If You Don’t 🧠 Train It to Think Like You</a></p>
+        <p><a href="https://medium.com/@lasyakonduru/plot-twist-people-still-pay-cash-for-taxis" target="_blank">🚕 Plot Twist: People Still Pay Cash for Taxis</a></p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with about_col2:
+    st.write("""
+### Hi, I'm Lasya Priya Konduru 🌟  
+
+I am a results-driven **Data Analyst and aspiring Data Scientist** with expertise in transforming complex datasets into actionable insights. My work spans **analytics, machine learning, and visualization**, helping businesses make informed decisions with speed and clarity.  
+
+I bring experience in **SQL, Python, R, Power BI, Tableau, AWS, and AI/ML techniques**, with a strong academic foundation — **M.S. in Analytics (GPA 3.8) from Saint Louis University** and **B.Tech in Computer Science from JNTUH**.  
+
+Beyond technical skills, I am passionate about building solutions that balance **accuracy, scalability, and usability**. I thrive in collaborative environments where I can combine **storytelling with data**, enabling stakeholders to connect insights with strategy.  
+
+When I’m not solving data problems, I enjoy exploring **emerging AI applications, writing articles**, and contributing to projects that push the boundaries of innovation.
+
+If you’re looking for someone who’s data-driven and people-powered — that’s me. 💡
+Let’s solve real problems, uncover meaningful stories, and maybe laugh a little along the way. 😄
+    """)
+
+    # --- Experience ---
+    st.markdown("<h3 style='color:#00c4ff;'>💼 Experience</h3>", unsafe_allow_html=True)
+    st.markdown("""
+    <div class='exp-card'><strong>AI/ML Researcher & Algorithm Developer, Ascent Up</strong><br>Jul 2025 – Sept 2025 | 3 months</div>
+    <div class='exp-card'><strong>Google Analytics Specialist, Resilience Inc.</strong><br>Jun 2025 – Present | 4 months</div>
+    <div class='exp-card'><strong>Google Analytics Specialist, Resilience Inc.</strong><br>Aug 2024 – Jun 2025 | 10 months</div>
+    <div class='exp-card'><strong>Data Analyst Apprentice, Coding temple</strong><br>Mar 2025 – Aug 2025 | 6 Months</div>
+    """, unsafe_allow_html=True)
+    
+    # Education Section
+    st.markdown("<h3 style='color:#00c4ff;'>🎓 Education</h3>", unsafe_allow_html=True)
+    st.markdown("""
+    <div class='edu-card'>
+    <h4>Saint Louis University</h4> <p>| St Louis, MO USA</p>
+    <h4>MS in Analytics (2023–2024) | GPA: 3.8</h4>
+    </div>
+    <div class='edu-card'>
+        <h4>Sreyas Institute of Engineering & Technology (JNTUH)</h4> <p>| Hyderabad, India</p>
+        <h4>B.Tech in Computer Science (2018–2022) | GPA: 3.2</h4>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # --- Certifications ---
     st.markdown("""
     <style>
     .cert-section, .exp-section {
@@ -253,26 +243,6 @@ Let’s solve real problems, uncover meaningful stories, and maybe laugh a littl
         text-decoration: none !important;
         box-shadow: 0 6px 18px rgba(0, 196, 255, 0.3);
     }
-
-    .exp-card {
-        background-color: #062366;
-        margin: 1rem auto;
-        max-width: 700px;
-        padding: 1rem 1.5rem;
-        border-radius: 12px;
-        box-shadow: 0 0 10px #00c4ff20;
-        text-align: left;
-    }
-    .exp-card h4 {
-        margin: 0;
-        color: white;
-        font-size: 16px;
-    }
-    .exp-card p {
-        margin: 0.3rem 0 0;
-        color: #ccc;
-        font-size: 14px;
-    }
     </style>
 
     <div class="cert-section">
@@ -287,24 +257,41 @@ Let’s solve real problems, uncover meaningful stories, and maybe laugh a littl
         </div>
     </div>
 
-    <div class="exp-section">
-        <h2>💼 Experience </h2>
-        <div class="exp-card">
-            <h4>Google Analytics Specialist, Resilience Inc.</h4>
-            <p>Aug 2024 – Present  |  9 months</p>
-        </div>
-        <div class="exp-card">
-            <h4>Data Scientist Intern, Coincent.ai</h4>
-            <p>Jul 2022 – Dec 2022  |  6 months</p>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
 # --- PROJECTS SECTION ---
 st.markdown("<div id='projects'></div>", unsafe_allow_html=True)
 st.markdown("<h2 class='section-title'>🎯Projects</h2>", unsafe_allow_html=True)
 
 projects = [
+    {
+        "Title": "AI-Powered Music Scoring System",
+        "Description": "Developed an AI-driven system that evaluates and scores music tracks, including rap battles, using advanced Natural Language Processing (NLP) and deep learning techniques. Built sentiment analysis and rhythm detection models to assess lyrical creativity, emotion, and delivery, enabling automated, unbiased scoring with over 90% alignment to expert evaluations.",
+        "Skills": "AI · Deep Learning · NLP · Sentiment Analysis · Python (Programming Language) · Model Validation",
+        "Category": ["🤖 AI", "🧠ML", "🗣NLP", "💻Web Dev"]
+
+    },
+    {
+        "Title": "Airline Passenger Satisfaction Predictor",
+        "Description": "Built a machine learning application to predict airline passenger satisfaction based on survey and demographic data. Conducted data cleaning, exploratory data analysis (EDA), feature engineering, and model comparison. Optimized RandomForestClassifier to achieve 95% accuracy, and deployed the solution via Streamlit for interactive prediction and visualization. This project highlights the use of supervised ML for improving customer experience in aviation.",
+        "Skills": "Machine Learning · Feature Engineering · Model Validation · Python (Programming Language) · Streamlit · Data Visualization",
+        "Link": "https://github.com/lasyakonduru/Airline-Passenger-Satisfaction-Predictor",
+        "AppLink": "https://airline-passenger-satisfaction-predictor.streamlit.app/",
+        "Category": ["🧠ML", "📊BI & Analytics", "📈Data Viz", "💻Web Dev"]
+
+    },
+    {
+        "Title": "LLM-Powered Predictive Analytics Agent",
+        "Description": "Designed and implemented an AI agent leveraging Large Language Models (LLMs) to perform predictive analytics tasks. Integrated natural language interfaces with structured data pipelines, enabling users to query and generate insights conversationally. The system combines prompt engineering, LLM reasoning, and predictive modeling, making advanced analytics accessible through human-like interactions. This project demonstrates the potential of AI copilots in business intelligence.",
+        "Skills": "Large Language Models (LLMs) · Predictive Analytics · Prompt Engineering · Python (Programming Language) · Artificial Intelligence · Data Pipelines",
+        "Link": "https://github.com/lasyakonduru/Building-an-AI-Agent-for-Predictive-Analytics-with-LLMs",
+        "Category": ["🤖 AI", "🧠ML", "🗣NLP", "💻Web Dev", "📊BI & Analytics"]
+    },
+    {
+        "Title": "Returns Reconciliation & Claims Audit Dashboard",
+        "Description": "A Power BI dashboard prototype that automates returns reconciliation, flags late returns and quantity mismatches, and tracks supplier performance using synthetic data. Helps audit teams visualize discrepancies and claim-policy violations in a scalable way. ",
+        "Skills": "Power BI · Data Modeling · Python (data simulation + preprocessing) · Dashboarding · Data Visualization",
+        "Link": "https://github.com/lasyakonduru/Returns-Reconciliation-Claims-Audit-Dashboard",
+        "Category": ["📊BI & Analytics", "📈Data Viz", "Cloud"]
+    },
     {
         "Title": "Optimizing E-Commerce Logistics using Advanced SQL",
         "Description": "Designed and implemented SQL-powered analytics and reporting solutions to optimize order fulfillment, sales trends, customer segmentation, and shipping cost efficiency for an e-commerce platform with 51K+ transactions. Utilized Advanced SQL Techniques such as Window Functions, Common Table Expressions (CTEs), RANK(), Indexing, and Partitioning to enhance query performance by 40% and improve business decision-making.",
@@ -326,7 +313,7 @@ projects = [
         "Skills": "Web Development · Machine Learning · Python (Programming Language), Sentiment Analysis, NLP",
         "Link": "https://github.com/lasyakonduru/Web-app-for-Sentiment-Analyzer-A-Comprehensive-Tool-for-Analyzing-Text-and-Dataset-Sentiments",
         "AppLink": "https://sentiment-analyz.streamlit.app/",
-        "Category": ["💻Web Dev", "🗣NLP"]
+        "Category": ["🧠ML", "💻Web Dev", "📊BI & Analytics", "🗣NLP"]
     },
     {
         "Title": "Banking Customer Churn Prediction Using a Neural Network",
@@ -340,7 +327,7 @@ projects = [
         "Description": "Developed a deep learning model to classify images into 10 categories from the CIFAR-10 dataset using Convolutional Neural Networks (CNNs). This project involved creating a baseline and enhanced model, applying data preprocessing, and evaluating model performance through metrics like accuracy, recall, and confusion matrices. The enhanced model, designed for real-world application in automotive safety systems, demonstrated improved accuracy and recall, with potential use in preventing deer-vehicle collisions. Implemented in TensorFlow/Keras with visualizations for model insights.",
         "Skills": "Machine Learning · Deep Learning · Data Science · Python (Programming Language) · Convolutional Neural Networks (CNN)",
         "Link": "https://github.com/lasyakonduru/CIFAR-10-Image-Classification-with-CNNs-Baseline-and-Enhanced-Models",
-        "Category": ["🧠ML"]
+        "Category": ["🧠ML", "🤖 AI"]
     },
     {
         "Title": "Bayesian Classification of Cammeo and Osmancik: RiceVarieties",
@@ -354,7 +341,7 @@ projects = [
         "Description": "This project aims to analyze and improve a superstore's sales performance and operational efficiency using AWS Athena for data querying and AWS QuickSight for visualization. The comprehensive analysis covers various business aspects, including customer segmentation, shipping logistics, discount impacts, and overall sales performance.",
         "Skills": "Extract, Transform, Load (ETL) · AWS Glue · SQL · Amazon Web Services (AWS) · Business Intelligence (BI) · Data Handling and Preprocessing · Performance Optimization · Efficiency Optimization · Customer Analysis · Amazon QuickSight · Data Storage and Management · AWS Identity and Access Management (AWS IAM) · Decision-Making · Amazon Athena · Analytical Skills · Performance Measurement · Reports and Dashboards · Analytical thinking · Attention to Detail",
         "Link": "https://github.com/lasyakonduru/superstore-sales-data-analysis",
-        "Category": ["📊BI & Analytics", "🛠SQL & Data Eng", "📈Data Viz"]
+        "Category": ["☁️Cloud", "📊BI & Analytics", "🛠SQL & Data Eng", "📈Data Viz"]
     },
     {
         "Title": "Breast Cancer Analysis",
@@ -400,7 +387,7 @@ projects = [
 ]
 
 # --- Filter Buttons (Horizontal only) ---
-categories = ["🌐All", "🧠ML", "📊BI & Analytics", "💻Web Dev", "🛠SQL & Data Eng", "📈Data Viz", "🗣NLP", "🧬BIO"]
+categories = ["🌐All", "🤖 AI", "🧠ML", "📊BI & Analytics", "💻Web Dev", "🛠SQL & Data Eng", "📈Data Viz", "🗣NLP", "🧬BIO", "☁️Cloud"]
 st.markdown("<div class='filter-row'>", unsafe_allow_html=True)
 filter_cols = st.columns(len(categories))
 for i, cat in enumerate(categories):
@@ -572,7 +559,7 @@ st.markdown("""
     <h2>📫 Contact Me</h2>
     <p><i class="fas fa-map-marker-alt"></i> Sammamish, WA 98075, United States</p>
     <div class='contact-icons'>
-        <a href="mailto:konduru.lasya@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        <a href="mailto:konduru.lasya@gmail.com?subject=Portfolio Contact" target="_blank"><i class="fas fa-envelope"></i></a>
         <a href="https://www.linkedin.com/in/lasya-priya-k/" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/lasyakonduru" target="_blank"><i class="fab fa-github"></i></a>
     </div>
