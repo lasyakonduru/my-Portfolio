@@ -337,11 +337,9 @@ if 'selected_category' not in st.session_state:
     st.session_state.selected_category = "🌐All"
 
 selected = st.session_state.selected_category
-filtered_projects = [p for p in projects if selected == "🌐All" or selected in p["Category"]]
+filtered_projects = [p for p in projects if selected == "🌐All" or selected in [c.strip() for c in p["Category"]]]
 
 # Render Project Cards
-st.markdown("<div class='card-grid'>", unsafe_allow_html=True)
-
 cards_html = ""
 for proj in filtered_projects:
     github_link = f"<a class='btn' href='{proj.get('Link')}' target='_blank'>📁 GitHub Repo</a>" if proj.get("Link") else ""
@@ -365,8 +363,9 @@ for proj in filtered_projects:
         </div>
     """
 
-st.markdown(cards_html, unsafe_allow_html=True)
-st.markdown("</div>", unsafe_allow_html=True)
+# Render container + cards together (one call)
+grid_html = f"<div class='card-grid'>{cards_html}</div>"
+st.markdown(grid_html, unsafe_allow_html=True)
 
 # --- CONTACT / FOOTER SECTION ---
 st.markdown("<div id='contact'></div>", unsafe_allow_html=True)
