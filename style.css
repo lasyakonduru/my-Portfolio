@@ -141,7 +141,7 @@ html, body, [class*="css"] {
 /* ---------- PROJECT CARDS ---------- */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem; /* this will now work */
     margin: 2rem auto;
     max-width: 1200px;
@@ -226,9 +226,15 @@ html, body, [class*="css"] {
     transition: 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-.filter-btn:hover,
+/* Hover effect */
+.filter-btn:hover {
+    background: linear-gradient(135deg, #ff6b6b, #ff8c42); /* reddish-orange */
+    transform: scale(1.05);
+}
+
+/* Active (selected) state */
 .filter-btn.active {
-    background: linear-gradient(135deg, #ff6b6b, #ff8c42);
+    background: linear-gradient(135deg, #42a5f5, #478ed1); /* blue gradient */
     transform: scale(1.05);
 }
 
