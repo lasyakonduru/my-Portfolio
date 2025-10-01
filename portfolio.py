@@ -50,7 +50,7 @@ with col2:
     st.markdown("<h1 style='font-size: 2.5rem; font-weight: bold;'>Lasya Priya Konduru</h1>", unsafe_allow_html=True)
     st.markdown("<h3 style='color: #333; margin-top: -10px; text-align: left;'>AI-Focused Data Analyst | Data Scientist | Problem Solver 🌟</h3>", unsafe_allow_html=True)
     st.markdown("""
-        <p class="welcome-text">
+        <p style="color: #737373;" class="welcome-text">
         I build AI-powered systems and data-driven solutions that turn numbers into business impact.
         With expertise in <b>Python, SQL, Power BI, AWS, and Machine Learning</b>, I deliver insights
         that drive smarter decisions and measurable results.
