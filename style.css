@@ -136,66 +136,94 @@ html, body, [class*="css"] {
     margin-top: 0.5rem;
 }
 
-/* --- Projects Grid --- */
+/* ---------- PROJECT CARDS ---------- */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 .card {
-    background: #2a2d34;
+    background: #1c1f26;
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 0 12px rgba(255,107,53,0.2);
+    box-shadow: 0 0 15px rgba(255, 140, 66, 0.25);
+    transition: transform 0.3s;
+    min-height: 280px;
+}
+.card:hover {
+    transform: scale(1.02);
 }
 .card h4 {
-    color: #fff;
-    margin-bottom: 0.6rem;
+    font-size: 18px;
+    color: #ff8c42;
 }
 .card p {
-    color: #ddd;
     font-size: 15px;
+    color: #dddddd;
 }
 .card .skills {
-    color: #ccc;
     font-size: 13px;
     margin-top: 0.6rem;
+    color: #f5b088;
 }
 .card .button-container {
     margin-top: 1rem;
     display: flex;
-    justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
-/* --- Filters --- */
+/* ---------- FILTER BUTTONS ---------- */
 .filter-row {
     display: flex;
     flex-wrap: wrap;
+    gap: 1rem;
     justify-content: center;
-    gap: 0.8rem;
-    margin: 1rem 0;
+    margin-top: 1rem;
 }
-.filter-btn {
-    background: #fff5ef;
-    border: 2px solid #ff6b35;
+.filter-btn, .filter-row button {
+    background: #1c1f26;
+    border: 2px solid #ff8c42;
     border-radius: 25px;
-    padding: 0.5rem 1.2rem;
-    color: black;
+    padding: 0.5rem 1rem;
+    color: #fff;
     font-weight: 600;
     cursor: pointer;
-    min-width: 100px;
+}
+.filter-row button:hover {
+    background: #ff8c42;
+    color: #000;
+}
+.filter-row button:focus, .filter-row button:active {
+    background: #ff7e5f !important;
+    color: #fff !important;
+}
+/* Equal filter buttons */
+.filter-row button {
+    min-width: 120px;
     text-align: center;
+    padding: 0.6rem 1rem;
 }
-.filter-btn:hover {
-    background: #ff6b35;
-    color: white;
+
+/* Add gap between project cards */
+.card-grid {
+    gap: 2rem !important;
+    margin-bottom: 2rem;
 }
-.filter-btn.active {
-    background: #ff6b35;
-    color: white;
+
+/* Skills contrast */
+.card .skills {
+    color: #ffb347;
+    font-weight: 500;
+}
+
+/* Align GitHub & Live buttons */
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 /* --- Footer --- */
