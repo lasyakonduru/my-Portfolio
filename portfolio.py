@@ -128,7 +128,7 @@ with about_col1:
     <div class="sticky-left">
     """, unsafe_allow_html=True)
 
-    st.image("Lass - Copy.png", caption="Lasya Priya Konduru", width=250)
+    st.image("Headshot.png", caption="Lasya Priya Konduru", width=250)
 
     home_lottie = load_lottiefile("Animation 2.json")
     if home_lottie:
@@ -407,7 +407,7 @@ st.markdown("""
 <style>
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1 fr));
     gap: 2rem;
     margin-top: 2rem;
 }
