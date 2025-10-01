@@ -142,6 +142,7 @@ html, body, [class*="css"] {
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 2rem !important;
     gap: 3rem !important;   /* space between cards */
     margin: 2rem auto;
     max-width: 1200px;      /* keeps cards aligned */
