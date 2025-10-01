@@ -337,33 +337,36 @@ if 'selected_category' not in st.session_state:
     st.session_state.selected_category = "🌐All"
 
 selected = st.session_state.selected_category
-filtered_projects = [p for p in projects if selected == "🌐All" or selected in [c.strip() for c in p["Category"]]]
+filtered_projects = [p for p in projects if selected == "🌐All" or selected in p["Category"]]
 
 # Render Project Cards
+st.markdown("<div class='card-grid'>", unsafe_allow_html=True)
+
 cards_html = ""
-for p in filtered_projects:
-    github_link = f"<a class='btn' href='{p.get('Link')}' target='_blank'>📁 GitHub Repo</a>" if p.get("Link") else ""
-    app_link   = f"<a class='btn' href='{p.get('AppLink')}' target='_blank'>🚀 Live App</a>" if p.get("AppLink") else ""
-    
+for proj in filtered_projects:
+    github_link = f"<a class='btn' href='{proj.get('Link')}' target='_blank'>📁 GitHub Repo</a>" if proj.get("Link") else ""
+    app_link = f"<a class='btn' href='{proj.get('AppLink')}' target='_blank'>🚀 Live App</a>" if proj.get("AppLink") else ""
+
     button_block = ""
-    if github_link or app_link:
-        button_block = f"<div class='button-container'>{github_link}{app_link}</div>"
-    
-    # Append this project card to the HTML string
+    if proj.get("Link") or proj.get("AppLink"):
+        button_block = "<div class='button-container'>"
+        if proj.get("Link"):
+            button_block += github_link
+        if proj.get("AppLink"):
+            button_block += app_link
+        button_block += "</div>"
+
     cards_html += f"""
         <div class='card'>
-            <h4>{p['Title']}</h4>
-            <p>{p['Description']}</p>
-            <div class='skills'><b>Skills:</b> {p['Skills']}</div>
+            <h4>{proj['Title']}</h4>
+            <p>{proj['Description']}</p>
+            <div class='skills'><b>Skills:</b> {proj['Skills']}</div>
             {button_block}
         </div>
     """
 
-# Wrap the cards inside the grid container
-grid_html = f"<div class='card-grid'>{cards_html}</div>"
-
-# Render everything in one go
-st.markdown(grid_html, unsafe_allow_html=True)
+st.markdown(cards_html, unsafe_allow_html=True)
+st.markdown("</div>", unsafe_allow_html=True)
 
 # --- CONTACT / FOOTER SECTION ---
 st.markdown("<div id='contact'></div>", unsafe_allow_html=True)
