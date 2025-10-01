@@ -28,28 +28,12 @@ def load_lottiefile(filepath: str):
 
 hero_lottie = load_lottiefile("Animation 1.json")
 
-# Global Styles
-st.markdown("""
-<style>
-    html, body, [class*="css"] {
-        background-color: #0e1117 !important;
-        color: #ffffff !important;
-        font-family: 'Segoe UI', sans-serif;
-        scroll-behavior: smooth;
-    }
-    .section-title {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #00c4ff;
-        margin: 2rem 0 1rem 0;
-        text-align: center;
-    }
+# Load external CSS file
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-    button, .btn, .stButton>button {
-        font-family: 'Segoe UI', sans-serif;
-    }
-</style>
-""", unsafe_allow_html=True)
+local_css("style.css")
 
 # --- WELCOME SECTION ---
 col1, col2 = st.columns([1, 2])
@@ -82,29 +66,6 @@ with col2:
         st.markdown("<a class='btn' href='https://github.com/lasyakonduru' target='_blank'>💻 GitHub</a>", unsafe_allow_html=True)
     with colC:
         st.markdown("<a class='btn' href='https://www.linkedin.com/in/lasya-priya-k/' target='_blank'>🔗 LinkedIn</a>", unsafe_allow_html=True)
-
-# Styling for buttons
-st.markdown("""
-<style>
-.btn {
-    display: inline-block;
-    background-color: #00c4ff;
-    color: black !important;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 15px;
-    text-decoration: none !important;
-    box-shadow: 0 4px 12px rgba(0,196,255,0.2);
-    transition: all 0.3s ease;
-}
-.btn:hover {
-    background-color: #009dcf;
-    color: white !important;
-    box-shadow: 0 6px 16px rgba(0,196,255,0.3);
-}
-</style>
-""", unsafe_allow_html=True)
 
 # --- ABOUT SECTION ---
 st.markdown("<div id='about'></div>", unsafe_allow_html=True)
@@ -201,50 +162,6 @@ Let’s solve real problems, uncover meaningful stories, and maybe laugh a littl
     
     # --- Certifications ---
     st.markdown("""
-    <style>
-    .cert-section, .exp-section {
-        margin-top: 3rem;
-        padding: 1rem 0;
-        text-align: center;
-    }
-
-    .cert-section h2, .exp-section h2 {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #00c4ff;
-        margin-bottom: 1.5rem;
-    }
-
-    .cert-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        margin-bottom: 2rem;
-    }
-
-    .cert-badge {
-        background: #74bfc4;
-        padding: 0.6rem 1.2rem;
-        border-radius: 24px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #00c4ff;
-        text-decoration: none !important;
-        box-shadow: 0 4px 12px rgba(0, 196, 255, 0.15);
-        transition: all 0.3s ease;
-        display: inline-block;
-    }
-
-    .cert-badge:hover {
-        background-color: #00c4ff;
-        color: black !important;
-        font-weight: 600;
-        text-decoration: none !important;
-        box-shadow: 0 6px 18px rgba(0, 196, 255, 0.3);
-    }
-    </style>
-
     <div class="cert-section">
         <h2>📜 Certifications</h2>
         <div class="cert-list">
@@ -256,6 +173,7 @@ Let’s solve real problems, uncover meaningful stories, and maybe laugh a littl
             <a class="cert-badge" href="https://www.credly.com/badges/ec7425f2-d275-4614-88c7-9eee8b02a84f/linked_in_profile" target="_blank">AWS Educate: Databases</a>
         </div>
     </div>
+    """, unsafe_allow_html=True)
 
 # --- PROJECTS SECTION ---
 st.markdown("<div id='projects'></div>", unsafe_allow_html=True)
@@ -402,85 +320,6 @@ if 'selected_category' not in st.session_state:
 selected = st.session_state.selected_category
 filtered_projects = [p for p in projects if selected == "🌐All" or selected in p["Category"]]
 
-# --- Card Grid Styling ---
-st.markdown("""
-<style>
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400\px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-.card {
-    background: #1c1f26;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 0 12px #00c4ff22;
-    transition: transform 0.3s;
-    margin-bottom: 1.5rem;
-}
-.card:hover {
-    transform: scale(1.02);
-}
-.card h4 {
-    margin-bottom: 0.6rem;
-    font-size: 18px;
-    color: #ffffff;
-}
-.card p {
-    font-size: 15px;
-    color: #dddddd;
-}
-.card .skills {
-    font-size: 13px;
-    color: #cccccc;
-    margin-top: 0.6rem;
-}
-.card .button-container {
-    margin-top: 1rem;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-.card .btn {
-    background-color: #00c4ff;
-    color: black !important;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 14px;
-    display: inline-block;
-    transition: background-color 0.3s;
-}
-.card .btn:hover {
-    background-color: #009dcf;
-    color: white !important;
-    text-decoration: none;
-}
-.filter-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 1rem;
-}
-.filter-btn {
-    background: #0e1117;
-    border: 2px solid #00c4ff;
-    border-radius: 25px;
-    padding: 0.5rem 1rem;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-}
-.filter-btn:hover {
-    background: #00c4ff;
-    color: black;
-}
-</style>
-""", unsafe_allow_html=True)
-
 # Render Project Cards
 st.markdown("<div class='card-grid'>", unsafe_allow_html=True)
 for proj in filtered_projects:
@@ -512,47 +351,6 @@ st.markdown("<div id='contact'></div>", unsafe_allow_html=True)
 st.markdown("---", unsafe_allow_html=True)
 
 st.markdown("""
-<style>
-.footer {
-    background-color: #1c1f26;
-    width: 100%;
-    padding: 2.5rem 1rem;
-    margin: 0;
-    border-radius: 0;
-    box-shadow: inset 0 1px 0 #333;
-    text-align: center;
-}
-.footer h2 {
-    font-size: 26px;
-    color: white;
-    margin-bottom: 0.5rem;
-}
-.footer p, .footer a {
-    color: #f1f1f1;
-    font-size: 16px;
-}
-.footer .contact-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-.footer .contact-icons a {
-    font-size: 26px;
-    color: #00c4ff;
-    transition: transform 0.3s ease;
-}
-.footer .contact-icons a:hover {
-    transform: scale(1.2);
-    color: white;
-}
-.footer .bottom-text {
-    color: #888;
-    margin-top: 1.5rem;
-    font-size: 13px;
-}
-</style>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <div class="footer">
