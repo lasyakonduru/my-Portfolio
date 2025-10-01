@@ -20,12 +20,14 @@ html, body, [class*="css"] {
     line-height: 1.6;
     color: #ff6b35; /* subtitle warm orange */
 }
+/* Button Row */
 .button-row {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: left;   /* center the group */
+    align-items: center;
+    gap: 1rem;                 /* space between buttons */
     margin-top: 1rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap;           /* wrap on small screens */
 }
 .btn {
     background-color: #ff6b35;
@@ -208,7 +210,7 @@ html, body, [class*="css"] {
 
 /* Add gap between project cards */
 .card-grid {
-    gap: 2rem !important;
+    gap: 5rem !important;
     margin-bottom: 2rem;
 }
 
