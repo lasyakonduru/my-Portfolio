@@ -403,11 +403,11 @@ selected = st.session_state.selected_category
 filtered_projects = [p for p in projects if selected == "🌐All" or selected in p["Category"]]
 
 # --- Card Grid Styling ---
-st.markdown("""
+st.markdown(r"""
 <style>
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1 fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
