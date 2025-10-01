@@ -50,7 +50,7 @@ with col2:
     st.markdown("<h1 style='font-size: 2.5rem; font-weight: bold;'>Lasya Priya Konduru</h1>", unsafe_allow_html=True)
     st.markdown("<h3 class='welcome-subtitle'>AI-Focused Data Analyst | Data Scientist | Problem Solver 🌟</h3>", unsafe_allow_html=True)
     st.markdown("""
-        <p style='font-size: 1.1rem; line-height: 1.6; color: #cccccc;'>
+        <p style='font-size: 1.1rem; line-height: 1.6; color = #ff8c42'>
         I build AI-powered systems and data-driven solutions that turn numbers into business impact.
         With expertise in <b>Python, SQL, Power BI, AWS, and Machine Learning</b>, I deliver insights
         that drive smarter decisions and measurable results.
@@ -59,10 +59,10 @@ with col2:
 
     # Buttons
     st.markdown("<div class='button-row'>", unsafe_allow_html=True)
-st.download_button("📄 Download Resume", data=open("LASYA K RESUME.pdf", "rb"), file_name="Lasya_Konduru_Resume.pdf")
-st.markdown("<a class='btn' href='https://github.com/lasyakonduru' target='_blank'>💻 GitHub</a>", unsafe_allow_html=True)
-st.markdown("<a class='btn' href='https://www.linkedin.com/in/lasya-priya-k/' target='_blank'>🔗 LinkedIn</a>", unsafe_allow_html=True)
-st.markdown("</div>", unsafe_allow_html=True)
+    st.download_button("📄 Download Resume", data=open("LASYA K RESUME.pdf", "rb"), file_name="Lasya_Konduru_Resume.pdf")
+    st.markdown("<a class='btn' href='https://github.com/lasyakonduru' target='_blank'>💻 GitHub</a>", unsafe_allow_html=True)
+    st.markdown("<a class='btn' href='https://www.linkedin.com/in/lasya-priya-k/' target='_blank'>🔗 LinkedIn</a>", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
 # --- ABOUT SECTION ---
 st.markdown("<div id='about'></div>", unsafe_allow_html=True)
@@ -128,17 +128,17 @@ with about_col1:
     for art in articles:
         st.markdown(f"""
             <div class='article-card'>
-                <h4>{art['title']}</h4>
+                <h5>{art['title']}</h4>
                 <p>{art['desc']}</p>
-                <a class='btn' href='{art['link']}' target='_blank'>Read More</a>
+                <a class='btn' href='{art['link']}' target='_blank'>Read More..</a>
             </div>
         """, unsafe_allow_html=True)
 
 with about_col2:
     st.write("""
-### Well,   
+#### Let’s start with a little about me! - Who I am, what I do, and why I love doing it
 
-I am a results-driven **Data Analyst and aspiring Data Scientist** with expertise in transforming complex datasets into actionable insights. My work spans **analytics, machine learning, and visualization**, helping businesses make informed decisions with speed and clarity.
+I am a results-driven **AI-focused Data Analyst & aspiring Data Scientist** with expertise in transforming complex datasets into actionable insights. My work spans **analytics, machine learning, and visualization**, helping businesses make informed decisions with speed and clarity.
 
 Beyond technical skills, I am passionate about building solutions that balance **accuracy, scalability, and usability**. I thrive in collaborative environments where I can combine **storytelling with data**, enabling stakeholders to connect insights with strategy.  
 
@@ -150,24 +150,36 @@ Let’s solve real problems, uncover meaningful stories, and maybe laugh a littl
     """)
 
     # --- Experience ---
-    st.markdown("<h3 style='color:#00c4ff;'>💼 Experience</h3>", unsafe_allow_html=True)
+    st.markdown("<h3>💼 Experience</h3>", unsafe_allow_html=True)
     st.markdown("""
-    <div class='exp-card'><strong>AI/ML Researcher & Algorithm Developer | Ascent Up</strong><br>Jul 2025 – Sept 2025 | 3 months</div>
-    <div class='exp-card'><strong>Google Analytics Specialist | Resilience Inc.</strong><br>Jun 2025 – Present | 4 months</div>
-    <div class='exp-card'><strong>Google Analytics Specialist | Resilience Inc.</strong><br>Aug 2024 – Jun 2025 | 10 months</div>
-    <div class='exp-card'><strong>Data Analyst Apprentice | Coding temple</strong><br>Mar 2025 – Aug 2025 | 6 Months</div>
+    <div class='exp-card'>
+      <strong>AI/ML Researcher & Algorithm Developer | Ascent Up</strong><br>
+      <span class="exp-dates">Jul 2025 – Sept 2025 | 3 months</span>
+    </div>
+    <div class='exp-card'>
+      <strong>Data Analyst | Resilience, Inc.</strong><br>
+      <span class="exp-dates">Jun 2025 – Present</span>
+    </div>
+    <div class='exp-card'>
+      <strong>Google Analytics Specialist & Asset Manager | Resilience, Inc.</strong><br>
+      <span class="exp-dates">Aug 2024 – Jun 2025 | 3 months</span>
+    </div>
+    <div class='exp-card'>
+      <strong>Data Analyst Apprentice | Coding Temple</strong><br>
+      <span class="exp-dates">Mar 2025 – Aug 2025 | 3 months</span>
+    </div>
     """, unsafe_allow_html=True)
     
     # Education Section
-    st.markdown("<h3 style='color:#00c4ff;'>🎓 Education</h3>", unsafe_allow_html=True)
+    st.markdown("<h3>🎓 Education</h3>", unsafe_allow_html=True)
     st.markdown("""
     <div class='edu-card'>
-    <h5>Saint Louis University| St Louis, MO USA</h5>
-    <h4>MS in Analytics (2023–2024) | GPA: 3.8</h4>
+        <h7>Saint Louis University| St Louis, MO USA</h5>
+        <h6>MS in Analytics (2023–2024) | GPA: 3.8</h4>
     </div>
     <div class='edu-card'>
-        <h5>Sreyas Institute of Engineering & Technology (JNTUH) | Hyderabad, India</h5>
-        <h4>B.Tech in Computer Science (2018–2022) | GPA: 3.2</h4>
+        <h7>Sreyas Institute of Engineering & Technology (JNTUH) | Hyderabad, India</h5>
+        <h6>B.Tech in Computer Science (2018–2022) | GPA: 3.2</h4>
     </div>
     """, unsafe_allow_html=True)
     
