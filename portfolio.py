@@ -147,20 +147,24 @@ Let’s solve real problems, uncover meaningful stories, and maybe laugh a littl
     st.markdown("<h3>💼 Experience</h3>", unsafe_allow_html=True)
     st.markdown("""
     <div class='exp-card'>
+      <strong>Data Analyst | Resilience, Inc.</strong><br>
+      <span class="exp-dates">Aug 2024 – Present | 1 year 6 months</span>
+    </div>
+    <div class='exp-card'>
       <strong>AI/ML Researcher & Algorithm Developer | Ascent Up</strong><br>
       <span class="exp-dates">Jul 2025 – Sept 2025 | 3 months</span>
     </div>
     <div class='exp-card'>
-      <strong>Data Analyst | Resilience, Inc.</strong><br>
-      <span class="exp-dates">Jun 2025 – Present</span>
-    </div>
-    <div class='exp-card'>
-      <strong>Google Analytics Specialist & Asset Manager | Resilience, Inc.</strong><br>
-      <span class="exp-dates">Aug 2024 – Jun 2025 | 3 months</span>
-    </div>
-    <div class='exp-card'>
       <strong>Data Analyst Apprentice | Coding Temple</strong><br>
-      <span class="exp-dates">Mar 2025 – Aug 2025 | 3 months</span>
+      <span class="exp-dates">Mar 2025 – Aug 2025 | 6 months</span>
+    </div>
+    <div class='exp-card'>
+      <strong>Data Scientist/Data Analyst | Intuites LLC</strong><br>
+      <span class="exp-dates">May 2023 - July 2024 | 1 year 3 months</span>
+    </div>
+    <div class='exp-card'>
+      <strong>Data Analyst | Jopranavee Pvt, Ltd. </strong><br>
+      <span class="exp-dates">June 2021 - July 2022 | 1 year 2 months</span>
     </div>
     """, unsafe_allow_html=True)
     
